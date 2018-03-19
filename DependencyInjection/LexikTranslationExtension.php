@@ -182,6 +182,7 @@ class LexikTranslationExtension extends Extension
         $storageDefinition = new Definition();
         $storageDefinition->setClass($container->getParameter(sprintf('lexik_translation.%s.translation_storage.class', $storage)));
         $storageDefinition->setArguments($args);
+        $storageDefinition->setPublic(true);
 
         $container->setDefinition('lexik_translation.translation_storage', $storageDefinition);
     }
